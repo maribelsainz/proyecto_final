@@ -1,6 +1,6 @@
 <template>
     <div>
-        <footer class="footer text-center footer__bg">
+        <footer class="footer text-center footer__bg fixed-bottom">
             <span class="footer__titulo">{{marca}}</span><span class="footer__derechos"> &copy; Todos los derechos reservados</span>
         </footer>
     </div>

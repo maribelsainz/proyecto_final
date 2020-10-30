@@ -2,12 +2,13 @@
   <div class="favoritos">
     <h1 class="favoritos__titulo p-5">{{favoritos_titulo}}</h1>
     <div class="mt-4">
-      <b-card-group deck class="mb-3">
+      <b-card-group deck class="mb-5">
         <b-card
           border-variant="dark"
           align="center"
           v-for="(favorito,index) in traeFavoritos"
           :key="index"
+          class="mb-5"
         >
           <b-card-text class="favoritos__tituloCard">{{favorito.receta_titulo}}</b-card-text>
           <b-card-text>

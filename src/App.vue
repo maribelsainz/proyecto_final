@@ -75,6 +75,7 @@ export default {
   width: 100%;
   height: auto;
   padding-top: 75px;
+  padding-bottom: 8rem;
   font-family: Avenir, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

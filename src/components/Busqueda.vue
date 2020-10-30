@@ -1,7 +1,7 @@
 <template>
   <div class="busqueda">
     <h1 class="busqueda__titulo p-5">{{titulo_principal}}</h1>
-    <div class="input-group input-group-lg busqueda__input">
+    <div class="input-group input-group-lg busqueda__input mb-5">
       <input
         v-model="input"
         @keyup.enter="obtieneRecetaNombre()"
@@ -14,7 +14,7 @@
     </div>
     <button
       type="button"
-      class="btn btn-success busqueda__boton mb-4 mt-4"
+      class="btn btn-success busqueda__boton mb-5 mt-4"
       @click="obtieneRecetaNombre()"
     >{{titulo_boton}}</button>
 
@@ -28,8 +28,10 @@
       <!-- Cuando encuentra 1 receta -->
       <div id="busquedaEncontradaUnElemento" :style="{display:display2}">
         <h2 class="busqueda__titulo__receta pt-4">{{receta_titulo}}</h2>
+
         <!-- Botón de favoritos -->
         <b-button
+          :disabled="isDisabled"
           @click="enviarFavoritos"
           v-if="usuarioLogueado"
           variant="warning"
@@ -101,6 +103,13 @@ export default {
   computed: {
     usuarioLogueado() {
       return this.$store.getters.getUsuarioLogueado;
+    },
+    isDisabled() {
+      if (this.receta_titulo === "") {
+        return true;
+      } else {
+        return false;
+      }
     }
   },
   methods: {
